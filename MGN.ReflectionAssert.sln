@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MGN.ReflectionAssert.Tests", "Tests\MGN.ReflectionAssert.Tests.csproj", "{FB2A3A23-06A9-49FF-BB89-F02A29B180EA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MGN.ReflectionAssert", "MGN.ReflectionAssert.csproj", "{5A5EF44C-17C2-4E25-9D28-AE109D95A9DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB2A3A23-06A9-49FF-BB89-F02A29B180EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB2A3A23-06A9-49FF-BB89-F02A29B180EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB2A3A23-06A9-49FF-BB89-F02A29B180EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB2A3A23-06A9-49FF-BB89-F02A29B180EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A5EF44C-17C2-4E25-9D28-AE109D95A9DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A5EF44C-17C2-4E25-9D28-AE109D95A9DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A5EF44C-17C2-4E25-9D28-AE109D95A9DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A5EF44C-17C2-4E25-9D28-AE109D95A9DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BDC518CC-31A3-4ADD-91D9-CAA75AFA0D24}
+	EndGlobalSection
+EndGlobal
