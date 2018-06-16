@@ -142,7 +142,7 @@ namespace MGN
             {
                 result = methodInfo.Invoke(obj, parameters);
             }
-            catch (Exception exception)
+            catch (TargetInvocationException exception)
             {
                 actualException = exception;
             }
@@ -151,6 +151,8 @@ namespace MGN
                 if (actualException == null) throw new AssertFailedException("Method did not throw expected exception.");
                 if ((expectedResult as Exception).Message != actualException.Message) throw new AssertFailedException("Method did not throw expected exception of " + expectedResult);
             }
+            if (!(expectedResult is Exception) && actualException!= null) throw new AssertFailedException("Method threw an unexpected exception.", actualException);
+            if (result == null && expectedResult== null) { /* do nothing */ }
             else if (!Equals(result, expectedResult)) throw new AssertFailedException(result + " did not match expected result of " + expectedResult);
         }
     }
