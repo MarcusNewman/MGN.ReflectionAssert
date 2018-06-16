@@ -1,14 +1,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Reflection;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace MGN.ReflectionAssert.Tests
 {
     public class UnitTestsBase
     {
         public string assemblyName = "MGN.ReflectionAssert.dll";
-        public string namespaceName = "MGN.ReflectionAssert";
+        public string namespaceName = "MGN";
         public string typeName = "ReflectionAssert";
         public string invalidName = "InvalidName";
 

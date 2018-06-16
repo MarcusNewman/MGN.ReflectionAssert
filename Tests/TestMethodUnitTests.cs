@@ -1,7 +1,6 @@
-﻿using System;
-using System.Text;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Reflection;
 
 namespace MGN.ReflectionAssert.Tests

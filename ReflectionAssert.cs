@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace MGN.ReflectionAssert
+namespace MGN
 {
     /// <summary>
     /// Methods for unit testing with reflection.
