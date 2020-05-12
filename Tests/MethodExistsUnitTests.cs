@@ -121,7 +121,7 @@ namespace MGN.ReflectionAssert.Tests
             Assert.IsInstanceOfType(value, expectedType, message);
 
             var actual = value.Message;
-            var expected = string.Format(methodName + " should take {0}.", parameterTypesAndNames.Count, "parameter(s)");
+            var expected = string.Format(methodName + " should take {0} parameter(s).", parameterTypesAndNames.Count);
             message = methodName + " error message should be " + expected;
             Assert.AreEqual(expected, actual, message);
         }

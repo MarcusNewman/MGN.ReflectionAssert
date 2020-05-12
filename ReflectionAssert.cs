@@ -11,14 +11,15 @@ namespace MGN
     public static class ReflectionAssert
     {
         /// <summary>
-        /// Tests for the existance of an assembly using reflection. 
+        /// Tests for the existance of an assembly using reflection. Assumes the same frameworkVersion as the testing assembly.
         /// </summary>
         /// <param name="assemblyName">The name of the assembly to be tested.</param>
         /// <exception cref="AssertFailedException">Thrown if the assembly does not exist.</exception>
         /// <returns>The correct assembly if it exists.</returns>
         public static Assembly AssemblyExists(string assemblyName)
         {
-            var path = "..\\..\\..\\..\\bin\\Debug\\netcoreapp2.0\\" + assemblyName;
+            var frameworkVersion = Assembly.GetExecutingAssembly().GetCustomAttribute<System.Runtime.Versioning.TargetFrameworkAttribute>().FrameworkName.Substring(21);
+            var path = "..\\..\\..\\..\\bin\\Debug\\netcoreapp" + frameworkVersion + "\\" + assemblyName;
             try
             {
                 return Assembly.LoadFrom(path);
@@ -105,7 +106,7 @@ namespace MGN
                 var actualParameters = methodInfo.GetParameters();
                 if (expectedParameterLength != actualParameters.Length)
                 {
-                    msg = string.Format(methodName + " should take {0}.", expectedParameterLength, "parameter(s)");
+                    msg = string.Format(methodName + " should take {0} parameter(s).", expectedParameterLength);
                     throw new AssertFailedException(msg);
                 }
                 var counter = 0;
@@ -151,8 +152,8 @@ namespace MGN
                 if (actualException == null) throw new AssertFailedException("Method did not throw expected exception.");
                 if ((expectedResult as Exception).Message != actualException.Message) throw new AssertFailedException("Method did not throw expected exception of " + expectedResult);
             }
-            if (!(expectedResult is Exception) && actualException!= null) throw new AssertFailedException("Method threw an unexpected exception.", actualException);
-            if (result == null && expectedResult== null) { /* do nothing */ }
+            if (!(expectedResult is Exception) && actualException != null) throw new AssertFailedException("Method threw an unexpected exception.", actualException);
+            if (result == null && expectedResult == null) { /* do nothing */ }
             else if (!Equals(result, expectedResult)) throw new AssertFailedException(result + " did not match expected result of " + expectedResult);
         }
     }

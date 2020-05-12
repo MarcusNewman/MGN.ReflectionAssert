@@ -14,8 +14,9 @@ namespace MGN.ReflectionAssert.Tests
 
         public Assembly GetAssembly()
         {
+            var frameworkVersion = Assembly.GetExecutingAssembly().GetCustomAttribute<System.Runtime.Versioning.TargetFrameworkAttribute>().FrameworkName.Substring(21);
             Assembly assembly = null;
-            var path = "..\\..\\..\\..\\bin\\Debug\\netcoreapp2.0\\" + assemblyName;
+            var path = "..\\..\\..\\..\\bin\\Debug\\netcoreapp" + frameworkVersion + "\\" + assemblyName;
             try { assembly = Assembly.LoadFrom(path); }
             catch { Assert.Fail(assemblyName + " assembly should exist."); }
             return assembly;
